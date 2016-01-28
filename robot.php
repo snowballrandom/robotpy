@@ -25,7 +25,8 @@ class robot{
         if(isset($_POST['take'])){    
          $this->take();
         }
-        if(isset($_POST['action'])){    
+        if(isset($_POST['action'])){
+                
           $this->action   = escapeshellarg($_POST['action']);
         } 
         if(isset($_POST['time'])){
@@ -105,7 +106,7 @@ class robot{
       $output='';
       $ret_code='';
       $ishell = shell_exec($com);
-return true;
+      return true;
     }
 
 }
