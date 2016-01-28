@@ -20,14 +20,13 @@ class robot{
     private function __init(){
           
       $this->robot_on = TRUE;
-        
 
-        if(isset($_POST['take'])){    
-         $this->take();
-        }
         if(isset($_POST['action'])){
-                
-          $this->action   = escapeshellarg($_POST['action']);
+            if($_POST['action'] === 'takepicture'){
+              $this->action = ($_POST['action']);
+            }else{
+              $this->action   = escapeshellarg($_POST['action']);   
+            }
         } 
         if(isset($_POST['time'])){
           $this->time = escapeshellarg($_POST['time']);
@@ -41,10 +40,10 @@ class robot{
     }
     
     private function action(){
-        if(strcmp($this->action, 'take')){
+            
+        if(($this->action == 'takepicture')){
           return $this->take();
         }
-
         if(strcmp($this->action, 'forward')){
           return $this->forward();
         }

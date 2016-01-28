@@ -62,9 +62,23 @@
 <button id="forward" onclick="action('forward')" value="Forward">Forward</button>
 <button id="back" onclick="action('backward')" value="Backward">Backward</button>
 <button id="right" onclick="action('right')" value="Right">Right</button>
-<button id="pic" onclick="action('take')" value="TakePic">Take Picture</button>
+<button id="pic" onclick="action('takepicture')" value="TakePic">Take Picture</button>
 
-<a href="/image1.jpg">View Image</a>
 
+
+<ul style="background-color:#deefee;">
+    
+<?php
+
+if ($handle = opendir('/srv/python/images/')) {
+    while (false !== ($entry = readdir($handle))) {
+        if ($entry != "." && $entry != "..") {
+            echo '<li><a href="images/'.$entry.'">'.$entry.'</a></li>';
+        }
+    }
+    closedir($handle);
+}
+?>
+</ul>
 </body>
 </html>
