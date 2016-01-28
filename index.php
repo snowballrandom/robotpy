@@ -50,7 +50,9 @@
           <li><label>Left Time</label></li>
           <li><input type="text" name="left"/></li>
           <li><label>Right Time</label></li>
-          <li><input type="text" name="right"/></li>
+          <li><input type="text" name="right" value="0"/></li>
+          <li><label>Take Picture qty:</label></li>
+          <li><input type="text" name="take" value="0"/></li>
         </form>
     </p>
 </div>    
